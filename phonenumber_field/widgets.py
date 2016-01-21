@@ -25,7 +25,7 @@ class PhonePrefixSelect(Select):
             for country_code in values:
                 country_name = locale.territories.get(country_code)
                 if country_name:
-                    choices.append((country_name, u'%s %s' % (country_name, prefix)))
+                    choices.append((u'%s %s' % (country_name, prefix), u'%s %s' % (country_name, prefix)))
         return super(PhonePrefixSelect, self).__init__(
             choices=sorted(choices, key=lambda item: item[1]))
 
